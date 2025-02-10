@@ -1,0 +1,14 @@
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+*.dll
+*.exe
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Dependencies
+third_party/
