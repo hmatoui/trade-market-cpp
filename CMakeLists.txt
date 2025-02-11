@@ -5,7 +5,7 @@ project(trade_market
 )
 
 # Set C++ standard (e.g., C++17/20)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set output directories

@@ -12,6 +12,12 @@ std::vector<OrderBookEntry> CSVReader::readCSV(std::string csvFileName) {
 	std::ifstream csvFile(csvFileName);
 	std::string line;
 
+	if (!csvFile.is_open()) {
+        std::cout << "CSVReader::readCSV opening the file...: " << csvFileName << std::endl;
+        // Attempt to open a file
+        csvFile.open(csvFileName, std::ios::in);
+    }
+
 	if (csvFile.is_open()) {
 		std::cout << "File open" << std::endl;
 
@@ -24,6 +30,9 @@ std::vector<OrderBookEntry> CSVReader::readCSV(std::string csvFileName) {
 				std::cout << "CSVReader::readCSV bad data" << std::endl;
 			}
 		}
+        csvFile.close();
+    } else {
+        std::cerr << "CSVReader::readCSV failed to open the csvFile: " << csvFileName << std::endl;
 	}
 
 	std::cout << "CSVReader::readCSV read " << entries.size() << " entries" << std::endl;

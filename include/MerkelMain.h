@@ -26,6 +26,6 @@ private:
     void processUserOption(int userOption);
 
     std::string currentTime;
-    OrderBook orderBook{"20200317.csv"};
+    OrderBook orderBook{"../../data/market.csv"};
     Wallet wallet;
 };
